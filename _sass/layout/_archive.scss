@@ -74,6 +74,31 @@
   }
 }
 
+.publication__body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  align-items: flex-start;
+  margin-top: 0.5em;
+
+  .publication__text {
+    flex: 2 1 320px;
+    min-width: 0;
+  }
+
+  .publication__figure {
+    flex: 1 1 220px;
+    max-width: 320px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: $border-radius;
+      border: 1px solid var(--global-border-color);
+    }
+  }
+}
+
 .archive__item:hover {
   .archive__item-teaser {
     box-shadow: 0 0 10px rgba(#000, 0.25);
