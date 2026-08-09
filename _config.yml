@@ -23,7 +23,7 @@ repository               : "dwpamaral/dwpamaral.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Dorian W. P. Amaral"
   pronouns         : # example: "she/her"
   bio              : "Short bio placeholder — update me! Postdoctoral researcher at IFAE. Previously: postdoc at Rice University, postdoc at Durham University, PhD at Durham University."
