@@ -6,8 +6,8 @@
   {% assign title = post.title %}
 {% endif %}
 
-{% assign arxiv_id = nil %}
-{% if post.paperurl contains "arxiv.org" %}
+{% assign arxiv_id = post.arxiv %}
+{% if arxiv_id == blank and post.paperurl contains "arxiv.org" %}
   {% assign arxiv_id = post.paperurl | split: "/abs/" | last | split: "v" | first %}
 {% endif %}
 
