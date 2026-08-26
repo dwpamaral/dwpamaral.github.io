@@ -1,0 +1,34 @@
+{% include base_path %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+{% assign arxiv_id = nil %}
+{% if post.paperurl contains "arxiv.org" %}
+  {% assign arxiv_id = post.paperurl | split: "/abs/" | last | split: "v" | first %}
+{% endif %}
+
+<div class="publication__card">
+  {% if post.image %}
+    <a class="publication__card-figure" href="{{ base_path }}{{ post.url }}">
+      <img src="{{ post.image | prepend: "/images/" | prepend: base_path }}" alt="{{ post.image_alt | default: title | strip_html }}">
+    </a>
+  {% endif %}
+
+  <div class="publication__card-body">
+    <h3 class="publication__card-title">
+      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+    </h3>
+
+    {% if arxiv_id %}
+      <p class="publication__card-meta"><a href="{{ post.paperurl }}">arXiv:{{ arxiv_id }}</a></p>
+    {% elsif post.paperurl %}
+      <p class="publication__card-meta"><a href="{{ post.paperurl }}">{{ post.venue | default: "Paper" }}</a></p>
+    {% elsif post.venue %}
+      <p class="publication__card-meta">{{ post.venue }}</p>
+    {% endif %}
+  </div>
+</div>
