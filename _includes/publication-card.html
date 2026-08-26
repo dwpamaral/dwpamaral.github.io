@@ -23,7 +23,9 @@
       <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
     </h3>
 
-    {% if arxiv_id %}
+    {% if post.doi %}
+      <p class="publication__card-meta"><a href="https://doi.org/{{ post.doi }}">{{ post.venue | default: post.doi }}</a></p>
+    {% elsif arxiv_id %}
       <p class="publication__card-meta"><a href="{{ post.paperurl }}">arXiv:{{ arxiv_id }}</a></p>
     {% elsif post.paperurl %}
       <p class="publication__card-meta"><a href="{{ post.paperurl }}">{{ post.venue | default: "Paper" }}</a></p>
