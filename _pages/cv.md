@@ -9,39 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-Education
-======
-* Ph.D., Durham University — placeholder, add year/details
-* [Add earlier degrees here]
+You can download my CV here: [main_cv.pdf]({{ base_path }}/files/main_cv.pdf)
 
-Work experience
-======
-* IFAE — Postdoctoral Researcher (current) — placeholder, add dates/details
-* Rice University — Postdoctoral Researcher — placeholder, add dates/details
-* Durham University — Postdoctoral Researcher — placeholder, add dates/details
-
-Skills
-======
-* Placeholder — add your skills here
-
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-
-Service and leadership
-======
-* Placeholder — add service/leadership roles here
+You can find a full list of my up-to-date publications on my [iNSPIRE page](https://inspirehep.net/authors/1912305)
