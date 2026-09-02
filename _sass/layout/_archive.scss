@@ -190,15 +190,14 @@
 
   img {
     display: block;
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    aspect-ratio: 1.618 / 1; // golden ratio, same as publication card images
     border-radius: $border-radius;
     border: 1px solid var(--global-border-color);
     object-fit: contain;
 
     @include breakpoint($medium) {
-      width: 110px;
-      height: 110px;
+      width: 200px;
     }
   }
 }
