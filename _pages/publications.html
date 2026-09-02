@@ -11,6 +11,27 @@ author_profile: true
 
 {% include base_path %}
 
+<h2>Highlights</h2><hr />
+<div class="publication__highlight-list">
+  {% assign post = site.publications | where: "permalink", "/publication/2025-ultralight-dm-levitated" | first %}
+  {% assign description = "First search for ultralight dark matter using a magnetically levitated particle, setting new constraints on dark matter coupled to B&minus;L with a superconducting force sensor." %}
+  {% include publication-highlight.html %}
+
+  {% assign post = site.publications | where: "permalink", "/publication/2026-ultraheavy-dm-levitated" | first %}
+  {% assign description = "First search for ultraheavy dark matter using a magnetically levitated particle, constraining dark matter&ndash;neutron couplings across masses from 10<sup>6</sup> to 10<sup>15</sup> GeV/c&sup2;." %}
+  {% include publication-highlight.html %}
+
+  {% assign post = site.publications | where: "permalink", "/publication/2024-vector-wave-dm-quantum-sensors" | first %}
+  {% assign description = "With Mustafa Amin: a framework for how ultralight vector (dark photon) dark matter imprints a distinctive three-peak signature on terrestrial quantum sensors." %}
+  {% include publication-highlight.html %}
+
+  {% assign post = site.publications | where: "permalink", "/publication/2023-direct-detection-nsi-landscape" | first %}
+  {% assign description = "Shows how dark matter direct detection experiments can probe neutrino non-standard interactions via solar neutrino scattering, introducing the SNuDD framework." %}
+  {% include publication-highlight.html %}
+</div>
+
+<h2>Publications</h2><hr />
+
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
   {% for category in site.publication_category  %}

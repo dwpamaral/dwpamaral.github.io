@@ -1,0 +1,38 @@
+{% include base_path %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+{% assign arxiv_id = post.arxiv %}
+{% if arxiv_id == blank and post.paperurl contains "arxiv.org" %}
+  {% assign arxiv_id = post.paperurl | split: "/abs/" | last | split: "v" | first %}
+{% endif %}
+
+<div class="publication__highlight">
+  {% if post.image %}
+    <a class="publication__highlight-figure" href="{{ base_path }}{{ post.url }}">
+      <img src="{{ post.image | prepend: "/images/" | prepend: base_path }}" alt="{{ post.image_alt | default: title | strip_html }}">
+    </a>
+  {% endif %}
+
+  <div class="publication__highlight-body">
+    <h3 class="publication__highlight-title">
+      <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+    </h3>
+
+    {% if post.doi %}
+      <p class="publication__highlight-meta"><a href="https://doi.org/{{ post.doi }}">{{ post.venue | default: post.doi }}</a></p>
+    {% elsif arxiv_id %}
+      <p class="publication__highlight-meta"><a href="{{ post.paperurl }}">arXiv:{{ arxiv_id }}</a></p>
+    {% elsif post.paperurl %}
+      <p class="publication__highlight-meta"><a href="{{ post.paperurl }}">{{ post.venue | default: "Paper" }}</a></p>
+    {% elsif post.venue %}
+      <p class="publication__highlight-meta">{{ post.venue }}</p>
+    {% endif %}
+
+    <p class="publication__highlight-desc">{{ description }}</p>
+  </div>
+</div>
