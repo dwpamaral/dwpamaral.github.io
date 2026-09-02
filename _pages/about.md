@@ -7,8 +7,4 @@ redirect_from:
   - /about.html
 ---
 
-Short bio placeholder — update me! I am a postdoctoral researcher at IFAE. Previously, I was a postdoc at Rice University and at Durham University, and I completed my PhD at Durham University.
-
-Research interests
-======
-Placeholder — add a short paragraph on your research interests here.
+I am a theoretical physicist working at the interface of astroparticle physics, quantum sensing, and precision measurement. My research develops new experimental probes of dark matter and physics beyond the Standard Model, with particular emphasis on levitated sensors and other quantum technologies. My work spans ultralight and ultraheavy dark matter, fifth forces, neutrino physics, and high-frequency gravitational waves.
